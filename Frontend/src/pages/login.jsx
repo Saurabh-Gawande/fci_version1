@@ -29,7 +29,7 @@ function Login() {
       form.append("username", username);
       form.append("password", password);
 
-      const response = await fetch(ProjectIp + "/login1", {
+      const response = await fetch(ProjectIp + "/login", {
         method: "POST",
         credentials: "include",
         headers: {

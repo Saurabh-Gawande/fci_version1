@@ -1,23 +1,16 @@
-\* FCI_monthly_model_allocation_rr *\
+\* Output\FCI_monthly_model_allocation_rr *\
 Minimize
-OBJ: 2241.1 x_frk_('AWB',_'FCSJ') + 1095.5 x_frkcgr_('HKG',_'BGTA')
- + 1441.3 x_frkcgr_('JJKR',_'BGTA') + 1897.2 x_rra_('BRCY',_'HSRA')
+OBJ: 1095.5 x_rice_('ARA',_'AKT') + 1897.2 x_rice_('ARA',_'BH')
+ + 1209.9 x_rice_('HTW',_'AKT') + 1897.2 x_rice_('HTW',_'BH')
+ + 571 x_wheat_('JHL',_'BPZ') + 2263.7 x_wheat_('JHL',_'FSNG')
+ + 454.2 x_wheat_('PCWD',_'BPZ') + 2241.1 x_wheat_('PCWD',_'FSNG')
 Subject To
-_C1: x_rra_('BRCY',_'HSRA') <= 1
-_C2: x_rra_('BRCY',_'HSRA') >= 1
-_C3: x_frk_('AWB',_'FCSJ') <= 1
-_C4: x_frk_('AWB',_'FCSJ') >= 1
-_C5: x_frkcgr_('JJKR',_'BGTA') <= 1
-_C6: x_frkcgr_('HKG',_'BGTA') <= 1
-_C7: x_frkcgr_('HKG',_'BGTA') + x_frkcgr_('JJKR',_'BGTA') >= 2
-Bounds
- 0 <= x_frk_('AWB',_'FCSJ')
- 0 <= x_frkcgr_('HKG',_'BGTA')
- 0 <= x_frkcgr_('JJKR',_'BGTA')
- 0 <= x_rra_('BRCY',_'HSRA')
-Generals
-x_frk_('AWB',_'FCSJ')
-x_frkcgr_('HKG',_'BGTA')
-x_frkcgr_('JJKR',_'BGTA')
-x_rra_('BRCY',_'HSRA')
+_C1: x_wheat_('JHL',_'BPZ') + x_wheat_('JHL',_'FSNG') <= 1
+_C2: x_wheat_('PCWD',_'BPZ') + x_wheat_('PCWD',_'FSNG') <= 1
+_C3: x_rice_('ARA',_'AKT') + x_rice_('ARA',_'BH') <= 1
+_C4: x_rice_('HTW',_'AKT') + x_rice_('HTW',_'BH') <= 1
+_C5: x_wheat_('JHL',_'FSNG') + x_wheat_('PCWD',_'FSNG') >= 1
+_C6: x_wheat_('JHL',_'BPZ') + x_wheat_('PCWD',_'BPZ') >= 1
+_C7: x_rice_('ARA',_'AKT') + x_rice_('HTW',_'AKT') >= 1
+_C8: x_rice_('ARA',_'BH') + x_rice_('HTW',_'BH') >= 1
 End
